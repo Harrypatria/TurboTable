@@ -1,0 +1,74 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name            = "turbotable"
+version         = "1.1.0"
+description     = "Blazing-fast interactive data tables and dashboards for millions of rows — Polars + FastAPI + Perspective WASM."
+readme          = "README.md"
+license         = { file = "LICENSE" }
+requires-python = ">=3.10"
+keywords        = [
+    "polars", "datatable", "fastapi", "data-visualization",
+    "big-data", "data-table", "interactive", "analytics",
+    "perspective", "apache-arrow", "dashboard", "wasm", "pivot",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+]
+
+authors = [
+    { name = "Dr Harry Patria", email = "harry@patriaco.ai" },
+]
+maintainers = [
+    { name = "Dr Harry Patria", email = "harry@patriaco.ai" },
+]
+
+dependencies = [
+    "polars>=0.20.0",
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",
+    "pytest-asyncio>=0.23",
+    "numpy>=1.26",
+]
+demo = [
+    "numpy>=1.26",
+]
+
+[project.urls]
+Homepage      = "https://github.com/harrypatria/TurboTable"
+Repository    = "https://github.com/harrypatria/TurboTable"
+Documentation = "https://github.com/harrypatria/TurboTable#readme"
+Issues        = "https://github.com/harrypatria/TurboTable/issues"
+Changelog     = "https://github.com/harrypatria/TurboTable/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["turbotable*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
